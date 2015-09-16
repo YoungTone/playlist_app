@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Show</title>
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<center><h1>Selected</h1></center>
+<table class=" table table-striped">
+<tr> 
+    <td class="heading">Title</td>
+    <td class="heading">Artist</td>
+    <td class="heading">Album</td>
+    <td class="heading">Year</td>
+    <td class="heading">Length</td>
+    <td class="heading">BPM</td>
+    <td class="heading">Genre</td>
+    <td class="heading">Art</td>
+</tr>
+  </thead>
+    <% song %>
+   <tr>
+  <td><a href="/songs/<%= song.id%>/edit"><%= song.title %></a></td>
+  <td><%= song.artist %></td>
+  <td><%= song.album %></td>
+  <td><%= song.year %></td>
+  <td><%= song.length %></td>
+  <td><%= song.bpm %></td>
+  <td><%= song.genre %></td>
+  <td><%= song.art %></td>
+  <td><a href="/songs/<%= song.id%>/edit"><button>Edit</button></a></td>
+  <td><form action="/songs/ <%= song.id%>?_method=delete" method="POST" class"btn btn-lg"><button>Delete</button></form></td>
+</tr>
+
+
+</table>
+  
+</body>
+</html>

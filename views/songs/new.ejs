@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New</title>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+ <center><h1>Add a Song</h1></center>
+  <table class=" table table-striped">
+  <form action="/songs" method="POST">
+  <tr>
+  <td class="heading">Title:<input type="text" name="song[title]" id="title"></td>
+  <td class="heading">Artist:<input type"text" name="song[artist]" id="artist"></td>
+  <td class="heading">Album:<input type"text" name="song[album]" id="album"></td>
+  <td class="heading">Year:<input type"text" name="song[year]" id="year"></td>
+  <td class="heading">Length:<input type"text" name="song[length]" id="length"></td>
+  <td class="heading">BPM:<input type"text" name="song[bpm]" id="bpm"></td>
+  <td class="heading">Genre:<input type"text" name="song[genre]" id="genre"></td>
+  <td class="heading">Art:<input type"text" name="song[art]" id="art"></td>
+  </tr>
+  </table>
+  <center><td class="heading"><button name="button">Submit</button></td></center>
+   <center><a href="/"><button name="button">Home</button>
+    </a></center>
+
+</body>
+</html>
