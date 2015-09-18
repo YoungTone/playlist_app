@@ -50,7 +50,7 @@
   <td><%= song.length %></td>
   <td><%= song.bpm %></td>
   <td><%= song.genre %></td>
-  <td><img src="<%= song.art %>" width="200px"></td>
+  <td><img src="<%= song.art %>" width="100px"></td>
   <td><a href="/songs/<%= song.id%>/edit"><button class="btn btn-default" >Edit</button></a></td>
   <td><form action="/songs/<%= song.id%>?_method=delete" method="POST"><button class="btn btn-default">Delete</button></form></td>
 </tr>
