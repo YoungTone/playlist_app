@@ -6,6 +6,11 @@ var express = require('express'),
 
 var db = require('./models');
 
+var request = require('request');
+
+var express = require('express'),
+    app = express(),
+    request = require('request');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -43,7 +48,6 @@ app.get('/songs/:id', function(req, res) {
 });
 
 // adding a song
-
 app.post('/songs', function(req, res) {
     // req.body.song replace the need for {name: req.body.name} etc...
     db.Song.create(req.body.song, function(err, song) {
@@ -75,6 +79,27 @@ app.delete('/songs/:id', function(req, res) {
         err ? res.send(err) : res.redirect('/');
     });
 });
+
+// searching api for a song
+app.get("/searchresults", function(req, res) { // res our servers object that allows us to respond/ express objec that allows us to respond
+    var search = encodeURIComponent(req.query.query);
+    console.log(req.query);
+    request.get('https://itunes.apple.com/search?term=' + search, function(error, response, body) { // response we have recieved from api/ data
+        if (error) {
+            res.status(500).send("You got an error - " + error);
+        } else if (!error && response.statCode >= 300) {
+            res.status(500).send("Something went wrong! Status: " + response.statusCode);
+        }
+        if (!error && response.statusCode === 200) {
+            var body = JSON.parse(body);
+            var song = body.results[0];
+            res.render('songs/searchresults', {
+                song: song
+            });
+        }
+    });
+});
+
 
 // start server
 app.listen(3000, function() {

@@ -13,7 +13,18 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
+<body style="padding-top: 40px">
+<nav class="navbar navbar-default navbar-fixed-top navbar transparent">
+      <a class="navbar-brand" href="/songs">Playlisted</a>
+
+<form class="navbar-form navbar-right" role="search" action="/searchresults">
+        <div class="form-group">
+          <a href="/songs/new" class="btn btn-default">Add Song</a>
+          <input type="text" class="form-control" placeholder="Search iTunes">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form> 
+</nav>
   <center><h1>Edit</h1></center>
   <table class=" table table-striped">
   <tr>
@@ -26,12 +37,11 @@
   <td class="heading">BPM:<input type"text" name="song[bpm]" id="bpm" value="<%= song.bpm %>"></td>
   <td class="heading">Genre:<input type"text" name="song[genre]" id="genre" value="<%= song.genre %>"></td>
   <td class="heading">Art:<input type"text" name="song[art]" id="art" value="<%= song.art %>"></td>
-  <center><td class="heading"><button name="button">Submit</button></td></center>
   </form>
   </tr>
   </table>
-   <center><a href="/"><button name="button">Home</button>
-    </a></center>
+    <center><td class="heading"><button name="button" class="btn btn-default">Submit</button></td></center>
+
   
 </body>
 </html>
